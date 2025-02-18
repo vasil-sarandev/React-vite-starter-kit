@@ -13,11 +13,16 @@ This is my personal starter kit for react apps in 2025.
 - MUI
 - SCSS
 - Dotenv
+- ESLint
+- Prettier
+- Vitest
 
 ##### Features in the starter kit:
 
 - Setup the routing and protected routes with login redirect
 - Setup the store and a few reducers (auth, common) and the store reset action
+- Added a sample test and command to run the tests
+- Setup the Prettier and ESLint configs.
 - Created a shared layout between the inner app pages
 - Added a few components - link/list/progress/suspense-loader/typography
 
