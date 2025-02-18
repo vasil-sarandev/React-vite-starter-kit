@@ -1,0 +1,27 @@
+@use "../../../../config/variables" as *;
+
+$app-layout-drawer-width: 250px;
+$app-layout-background: rgb(18, 18, 18);
+
+.app-layout-drawer {
+    &__inner {
+        width: $app-layout-drawer-width;
+        background: $app-layout-background;
+        color: $app-font-color-white;
+        height: 100%;
+    }
+    &__menu-link {
+        cursor: pointer;
+        text-decoration: none !important;
+    }
+    &__menu-item {
+        &:hover{
+            transition: all 0.3s ease;
+            background-color: #383838;
+        }
+    }
+    &__menu-icon {
+        color: $app-font-color-white;
+    }
+    
+}

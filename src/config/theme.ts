@@ -1,0 +1,3 @@
+export const APP_THEME_SPACING = 8;
+export const APP_THEME_PRIMARY_COLOR_MAIN = '#1976D2';
+export const APP_THEME_SECONDARY_COLOR_MAIN = '#FF9800';

@@ -1,0 +1,22 @@
+@use "../../../../config/variables" as *;
+
+$app_header-bg: #000;
+$app_header-height: 50px;
+
+.app-layout-header {
+    background-color: $app-header-bg;
+    height: $app_header-height;
+    color: $app-font-color-white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__right, &__left {
+        display: flex;
+        align-items: center;
+    }
+    &__logout-icon, &__menu-icon {
+        cursor: pointer;
+    }
+}
+

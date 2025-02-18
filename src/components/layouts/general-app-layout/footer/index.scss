@@ -1,0 +1,8 @@
+$app-footer-border-top: 1px solid #f0f0f0;
+
+.app-layout-footer {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border-top: $app-footer-border-top;
+}
