@@ -1,7 +1,7 @@
-import { paths } from '@/config';
 import { Navigate, useLocation } from 'react-router';
+import { paths } from '@/config';
 import { CloudAdminUserRoles } from '@/lib/auth';
-import { useAppSelector } from '@/store';
+import { useAppSelector } from '@/lib/store';
 
 export const ProtectedRoute = ({
   children,
@@ -10,7 +10,7 @@ export const ProtectedRoute = ({
   children: React.ReactNode;
   roles?: Array<CloudAdminUserRoles>;
 }) => {
-  const user = useAppSelector((state) => state.auth.user);
+  const user = useAppSelector(state => state.auth.user);
   // TODO: get user roles here
   const userRoles = [CloudAdminUserRoles.Admin];
   const location = useLocation();
@@ -19,7 +19,7 @@ export const ProtectedRoute = ({
     return <Navigate to={paths.auth.login.getHref(location.pathname)} replace />;
   }
 
-  if (roles.some((role) => !userRoles.includes(role))) {
+  if (roles.some(role => !userRoles.includes(role))) {
     console.error('user is unauthorized to access the page.');
     return <Navigate to={paths.auth.login.getHref(location.pathname)} replace />;
   }

@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router';
-import { Header } from './header';
-import { Footer } from './footer';
-import { useApp100vh } from '@/lib/shared';
-import { Box } from '@/components/box';
-
-import './index.scss';
 import { GeneralAppLayoutContextProvider } from './context';
 import { GeneralAppLayoutDrawer } from './drawer';
+import { Footer } from './footer';
+import { Header } from './header';
+import { Box } from '@/components/box';
+import { useApp100vh } from '@/lib/shared';
+
+import './index.scss';
 
 export const GeneralAppLayout = () => {
   const minHeight = useApp100vh();

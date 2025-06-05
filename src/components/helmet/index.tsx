@@ -1,6 +1,6 @@
 import { Helmet as ReactHelmet } from 'react-helmet';
 
-export const DEFAULT_PAGE_TITLE = 'Inspire Admin';
+export const DEFAULT_PAGE_TITLE = 'Cloud Admin';
 
 interface IProps {
   title: string;
@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const createPageSeoTitle = ({ addPrefix, title }: { addPrefix: boolean; title: string }) => {
-  return `${addPrefix ? 'Inspire Admin | ' : ''}${title}`;
+  return `${addPrefix ? 'Cloud Admin | ' : ''}${title}`;
 };
 
 export const Helmet = ({ title, description = '', addPrefix = true }: IProps) => {

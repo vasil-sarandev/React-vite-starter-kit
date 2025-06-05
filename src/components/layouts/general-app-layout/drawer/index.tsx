@@ -1,6 +1,7 @@
-import { OverridableComponent } from '@mui/material/OverridableComponent';
-import { SvgIconTypeMap } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
+import { SvgIconTypeMap } from '@mui/material';
+import { OverridableComponent } from '@mui/material/OverridableComponent';
+import { useGeneralAppLayoutContext } from '../context';
 import {
   Drawer,
   Box,
@@ -12,17 +13,16 @@ import {
   ListItemText,
 } from '@/components';
 import { paths } from '@/config';
-import { useGeneralAppLayoutContext } from '../context';
 
 import './index.scss';
 
 interface IAppDrawerMenuLinks {
   label: string;
   href: string;
-  Icon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>> & { muiName: string };
+  Icon: OverridableComponent<SvgIconTypeMap<object, 'svg'>> & { muiName: string };
 }
 const APP_DRAWER_MENU_LINKS: IAppDrawerMenuLinks[] = [
-  { label: 'Patients', href: paths.app.patients.getHref(), Icon: HomeIcon },
+  { label: 'Dashboard', href: paths.app.dashboard.getHref(), Icon: HomeIcon },
 ];
 
 export const GeneralAppLayoutDrawer = () => {
@@ -39,7 +39,7 @@ export const GeneralAppLayoutDrawer = () => {
         onClick={handleClose}
       >
         <List className="app-layout-drawer__menu-list">
-          {APP_DRAWER_MENU_LINKS.map((item) => (
+          {APP_DRAWER_MENU_LINKS.map(item => (
             <Link href={item.href} key={item.label} className="app-layout-drawer__menu-link">
               <ListItem className="app-layout-drawer__menu-item">
                 <ListItemButton disableGutters>

@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
 import { Drawer as MaterialDrawer } from '@mui/material';
+import { ReactNode } from 'react';
 import { IAppComponentIdentityProps } from '@/lib/shared';
 
 interface IProps extends IAppComponentIdentityProps {

@@ -1,15 +1,11 @@
 class AuthApiClient {
-    constructor() {}
+  constructor() {}
 
-    login = () => {
+  login = () => {};
 
-    }
+  silentLogin = () => {};
 
-    silentLogin = () => {
-
-    }
-
-    logout = () => {}
+  logout = () => {};
 }
 
-export const authApiClient = new AuthApiClient()
+export const authApiClient = new AuthApiClient();

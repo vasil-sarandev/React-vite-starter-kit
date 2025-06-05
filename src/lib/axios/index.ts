@@ -1,32 +1,28 @@
-import { env } from '@/config';
 import axios, {
   AxiosError,
   AxiosRequestConfig,
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from 'axios';
+import { env } from '@/config';
 
-export enum InspireAxiosRequestHeaders {
+export enum IAppRequestHeaders {
   auth = 'Authorization',
 }
 
-export const createAuthHeader = (accessToken: string) =>
-  `Bearer ${accessToken}`;
+export const createAuthHeader = (accessToken: string) => `Bearer ${accessToken}`;
 export const getAccessTokenFromAuthHeader = (authorizationHeader: string) =>
   authorizationHeader.split(' ')[1];
 
-// eslint-disable-next-line compat/compat
 const abortController = new AbortController();
 
-type ResolveCallback = (
-  config?: AxiosRequestConfig,
-) => PromiseLike<AxiosRequestConfig[]> | void;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+type ResolveCallback = (config?: AxiosRequestConfig) => PromiseLike<AxiosRequestConfig[]> | void;
 
 const augmentHeaders = async (
   request: InternalAxiosRequestConfig,
 ): Promise<InternalAxiosRequestConfig> => {
   const { headers } = request;
-  const authorizationHeader = headers[InspireAxiosRequestHeaders.auth];
 
   // TODO: implement check if accessToken is expired here.
 
@@ -50,14 +46,12 @@ const responseSuccessHandler = (res: AxiosResponse) => {
 };
 
 const responseErrorHandler = (err: AxiosError) => {
-  return Promise.reject('TODO: error handler');
+  // TODO: implement error handling here.
+  return Promise.reject(err);
 };
 
 export const axiosInstance = axios.create({
   baseURL: env.API_URL,
 });
 axiosInstance.interceptors.request.use(requestInterceptor);
-axiosInstance.interceptors.response.use(
-  responseSuccessHandler,
-  responseErrorHandler,
-);
+axiosInstance.interceptors.response.use(responseSuccessHandler, responseErrorHandler);

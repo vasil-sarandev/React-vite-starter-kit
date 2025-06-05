@@ -34,9 +34,6 @@ This is my personal starter kit for react apps in 2025.
 
   \*`node` > v20 is required to run the project.
 
-- Checkout the repository or download the zipped source code.
-- Get from the Platform Team the credentials that you should use to replace the default values in .env.sample file (or ask for an .env copy from one of the devs - Vasil Sarandev, Nikola Peevski)
-
 #### Running the app
 
 ```

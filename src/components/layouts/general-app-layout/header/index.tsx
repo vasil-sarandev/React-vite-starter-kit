@@ -1,15 +1,15 @@
 import LogoutIcon from '@mui/icons-material/Logout';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useGeneralAppLayoutContext } from '../context';
 import { Typography, Box } from '@/components';
 import { CloudAdminUser } from '@/lib/auth';
+import { useAppSelector } from '@/lib/store';
 
 import './index.scss';
-import { useGeneralAppLayoutContext } from '../context';
-import { useAppSelector } from '@/store';
 
 export const Header = () => {
   // the app layout is protected so we can safely cast this.
-  const user = useAppSelector((state) => state.auth.user) as CloudAdminUser;
+  const user = useAppSelector(state => state.auth.user) as CloudAdminUser;
 
   const { toggleDrawer } = useGeneralAppLayoutContext();
 
@@ -22,8 +22,7 @@ export const Header = () => {
       <div className="app-layout-header__left">
         <MenuIcon className="app-layout-header__menu-icon" onClick={toggleDrawer} />
         <Box className="app-layout-header__logo" sx={{ ml: 1 }}>
-          {/* TODO: replace this with a logo if they provide us one? */}
-          <Typography variant="h6">Inspire Cloud Admin</Typography>
+          <Typography variant="h6">Cloud Admin</Typography>
         </Box>
       </div>
       <div className="app-layout-header__right">

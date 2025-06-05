@@ -1,16 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { resetStoreActionMatcher } from '@/store/utils';
+import { resetStoreActionMatcher } from '@/lib/store/utils';
 
 export interface ICommonState {
-    loginRedirectUrl: string | null
+  loginRedirectUrl: string | null;
 }
 
 const initialState: ICommonState = {
-    loginRedirectUrl: null
+  loginRedirectUrl: null,
 };
 
 export { initialState as initialStateCommon };
-
 
 export const { reducer: commonReducer, actions: commonActions } = createSlice({
   name: 'common',
@@ -20,7 +19,7 @@ export const { reducer: commonReducer, actions: commonActions } = createSlice({
       state.loginRedirectUrl = action.payload;
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder.addMatcher(resetStoreActionMatcher, () => {
       return initialState;
     });

@@ -1,14 +1,14 @@
 import { useMemo, lazy } from 'react';
 import { createBrowserRouter, Navigate, RouteObject } from 'react-router';
 import { RouterProvider } from 'react-router/dom';
-import { paths } from '@/config';
 import { GeneralAppLayout, ProtectedRoute } from '@/components';
+import { paths } from '@/config';
 
 const appBrowserRouterConfig: Array<RouteObject> = [
-  // no public homepage, just redirecting to patients for now unless business requirements change.
+  // no public homepage added, just redirecting to dashboard.
   {
     path: paths.home.path,
-    element: <Navigate to={paths.app.patients.getHref()} />,
+    element: <Navigate to={paths.app.dashboard.getHref()} />,
   },
   {
     path: paths.auth.login.path,
@@ -23,12 +23,12 @@ const appBrowserRouterConfig: Array<RouteObject> = [
     ),
     children: [
       {
-        path: paths.app.patients.path,
-        Component: lazy(() => import('./pages/patients')),
+        path: paths.app.dashboard.path,
+        Component: lazy(() => import('./pages/dashboard')),
       },
       {
-        path: paths.app.patient.path,
-        Component: lazy(() => import('./pages/patient')),
+        path: paths.app.product.path,
+        Component: lazy(() => import('./pages/product')),
       },
     ],
   },

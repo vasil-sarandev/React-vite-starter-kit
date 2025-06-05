@@ -6,8 +6,6 @@ export const resetStoreAction = (): Action => ({
   type: RESET_STORE_ACTION_TYPE,
 });
 
-export const resetStoreActionMatcher = (
-  action: Action | PayloadAction,
-): boolean => {
+export const resetStoreActionMatcher = (action: Action | PayloadAction): boolean => {
   return action.type === RESET_STORE_ACTION_TYPE;
 };

@@ -1,6 +1,6 @@
-import { useAppDispatch } from '@/lib/store';
-import { CloudAdminUser } from '../types';
 import { authActions } from './slice';
+import { CloudAdminUser } from '@/lib/auth';
+import { useAppDispatch } from '@/lib/store';
 
 interface IUseAuth {
   setUser: (user: CloudAdminUser) => void;

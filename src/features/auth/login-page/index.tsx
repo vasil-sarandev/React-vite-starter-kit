@@ -1,6 +1,5 @@
-import { Typography } from "@/components"
+import { Typography } from '@/components';
 
 export const LoginPageContainer = () => {
-return (
-    <Typography variant="body1">Hello from Login</Typography>)
-}
+  return <Typography variant="body1">Hello from Login</Typography>;
+};

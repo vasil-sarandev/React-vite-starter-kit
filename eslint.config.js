@@ -75,7 +75,9 @@ export default tseslint.config(
     },
   },
   {
-    plugins: ['check-file'],
+    plugins: {
+      'check-file': eslintPluginCheckFile,
+    },
     files: ['src/**/!(__tests__)/*'],
     rules: {
       'check-file/folder-naming-convention': [

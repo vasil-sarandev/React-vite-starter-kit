@@ -9,6 +9,7 @@
     "test": "vitest",
     "check-types": "tsc --project tsconfig.json --pretty --noEmit",
     "lint": "eslint .",
+    "format": "prettier . --write",
     "preview": "vite preview",
     "start:dev": "vite --mode dev",
     "start:qa": "vite --mode qa"

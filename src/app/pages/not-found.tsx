@@ -1,6 +1,6 @@
+import { Link } from 'react-router';
 import { ContentLayout, Typography } from '@/components';
 import { paths } from '@/config';
-import { Link } from 'react-router';
 
 const NotFoundPage = () => {
   return (

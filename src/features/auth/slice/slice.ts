@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CloudAdminUser } from '@/lib/auth';
-import { resetStoreActionMatcher } from '@/store/utils';
+import { resetStoreActionMatcher } from '@/lib/store/utils';
 
 export interface IAuthState {
   user: CloudAdminUser | null;
@@ -13,7 +13,7 @@ const initialState: IAuthState = {
   // user: null,
   user: {
     name: 'Vasil S.',
-    email: 'wsarandev@gmail.com',
+    email: 'vasil@mail.com',
   },
   accessToken: null,
   isLoggedIn: false,
@@ -37,7 +37,7 @@ export const { reducer: authReducer, actions: authActions } = createSlice({
       //TODO: set axios auth headers here.
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder.addMatcher(resetStoreActionMatcher, () => {
       return initialState;
     });

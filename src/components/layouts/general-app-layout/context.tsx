@@ -8,7 +8,7 @@ interface IContextPayload {
 
 const GeneralAppLayoutContext = createContext<IContextPayload>({
   drawerOpen: false,
-  setDrawerOpen: (_) => {},
+  setDrawerOpen: () => {},
   toggleDrawer: () => {},
 });
 
@@ -23,7 +23,7 @@ export const GeneralAppLayoutContextProvider = ({
 }: IProviderProps) => {
   const [drawerOpen, setDrawerOpen] = useState(defaultDrawerOpen);
 
-  const toggleDrawer = () => setDrawerOpen((prev) => !prev);
+  const toggleDrawer = () => setDrawerOpen(prev => !prev);
 
   return (
     <GeneralAppLayoutContext.Provider value={{ drawerOpen, setDrawerOpen, toggleDrawer }}>
@@ -32,4 +32,5 @@ export const GeneralAppLayoutContextProvider = ({
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useGeneralAppLayoutContext = () => useContext(GeneralAppLayoutContext);

@@ -1,12 +1,12 @@
+import { ThemeProvider } from '@mui/material';
 import * as React from 'react';
-import { env } from '@/config';
-import { AppRouter } from './router';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import { AppRouter } from './router';
 import { SuspenseLoader } from '@/components';
-import { ThemeProvider } from '@mui/material';
+import { env } from '@/config';
 import { theme } from '@/lib/material';
-import { persistentStore, store } from '@/store';
+import { persistentStore, store } from '@/lib/store';
 
 import './index.scss';
 

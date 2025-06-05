@@ -1,4 +1,3 @@
-import { IAppComponentIdentityProps } from '@/lib/shared';
 import {
   ListOwnProps,
   List as MaterialList,
@@ -11,6 +10,7 @@ import {
   ListItemIconProps,
   ListItemIcon as MaterialListItemIcon,
 } from '@mui/material';
+import { IAppComponentIdentityProps } from '@/lib/shared';
 
 type IListProps = IAppComponentIdentityProps & ListOwnProps & {};
 type IListItemProps = IAppComponentIdentityProps & ListItemBaseProps & {};

@@ -17,13 +17,13 @@ export const paths = {
       path: '/app',
       getHref: () => '/app',
     },
-    patients: {
+    dashboard: {
       path: '',
       getHref: () => '/app',
     },
-    patient: {
-      path: 'patients/:patientId',
-      getHref: (id: string) => `/app/patients/${id}`,
+    product: {
+      path: 'product/:productId',
+      getHref: (id: string) => `/app/product/${id}`,
     },
   },
 } as const;

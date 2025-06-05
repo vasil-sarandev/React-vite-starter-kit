@@ -1,6 +1,6 @@
-import { IAppComponentIdentityProps } from '@/lib/shared';
 import { LinkOwnProps, Link as MaterialLink } from '@mui/material';
 import { ReactNode } from 'react';
+import { IAppComponentIdentityProps } from '@/lib/shared';
 
 interface IProps extends IAppComponentIdentityProps {
   href: string;
